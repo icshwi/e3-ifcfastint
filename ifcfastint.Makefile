@@ -33,6 +33,9 @@ APP:=ifcfastintApp
 APPDB:=$(APP)/Db
 APPSRC:=$(APP)/src
 
+ifneq ($(strip $(IFCDAQDRV2_DEP_VERSION)),)
+ifcdaqdrv2_VERSION=$(IFCDAQDRV2_DEP_VERSION)
+endif
 
 USR_INCLUDES += -I$(where_am_I)$(APPSRC)
 
@@ -58,6 +61,13 @@ SOURCES += $(APPSRC)/IFCFastIntDIChannel.cpp
 SOURCES += $(APPSRC)/IFCFastIntDIChannelGroup.cpp
 SOURCES += $(APPSRC)/IFCFastIntInterlockFSM.cpp 
 SOURCES += $(APPSRC)/IFCFastIntPowerAvg.cpp
+
+SOURCES += $(APPSRC)/IFCFastInt_iocsh.c
+DBDS += $(APPSRC)/IFCFastInt_iocsh.dbd
+
+SOURCES += $(APPSRC)/IFCFastInt_aSub.c
+DBDS += $(APPSRC)/IFCFastInt_aSub.dbd
+
 
 # db rule is the default in RULES_E3, so add the empty one
 

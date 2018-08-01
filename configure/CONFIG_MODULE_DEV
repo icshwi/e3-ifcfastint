@@ -1,6 +1,6 @@
 #
 EPICS_MODULE_NAME:=ifcfastint
-EPICS_MODULE_TAG:=master
+EPICS_MODULE_TAG:=ts2ioc
 #
 E3_MODULE_VERSION:=develop
 
